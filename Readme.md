@@ -94,7 +94,6 @@ sequenceDiagram
 | Design Organizational Units (OUs) | Apply different policies to different departments at scale |
 | Create users, groups, and group memberships | Role-based access control — the standard for enterprise permissions |
 | Configure Group Policy Objects (GPOs) | Centrally enforce password policy, lockout, and device restrictions |
-| Join a machine to the domain | Bring a workstation under centralized, policy-enforced management |
 | Reset passwords / unlock accounts | The highest-volume help desk tickets in any organization |
 | Offboard accounts (disable, not delete) | Preserve audit history while immediately revoking access |
 | Audit accounts and group membership via PowerShell | Compliance and security reporting |
@@ -119,7 +118,7 @@ sequenceDiagram
 <details>
 <summary><strong>Step 1 — Provision the VM</strong></summary>
 
-Created an Azure VM using Windows Server 2025 Datacenter (Gen2), `Standard_B2s` size, RDP (3389) inbound allowed. VM stopped between sessions to stay within free-tier compute hours.
+Created an Azure VM using Windows Server 2025 Datacenter (Gen2), `Standard_D2s` size, RDP (3389) inbound allowed. VM stopped between sessions to stay within free-tier compute hours.
 
 </details>
 

@@ -103,7 +103,7 @@ sequenceDiagram
 
 ## 🛠️ Environment
 
-- **Compute:** Azure `Standard_B2s` VM (2 vCPU / 4GB RAM), Windows Server 2025 Datacenter — Gen2
+- **Compute:** Azure `Standard_D2s` VM (2 vCPU / 4GB RAM), Windows Server 2025 Datacenter — Gen2
   *(Alternative: VirtualBox locally — 4GB RAM / 60GB disk minimum per VM)*
 - **Region:** East US
 - **Domain:** `lab.local` (single forest, single domain)
@@ -112,31 +112,7 @@ sequenceDiagram
 
 ---
 
-## 📁 Repository Structure
 
-```
-lab-01-active-directory/
-├── README.md                  ← you are here
-├── docs/
-│   ├── lab-guide.md            # Full step-by-step walkthrough
-│   └── screenshots/
-│       ├── 01-vm-provisioning.png
-│       ├── 02-adds-role-install.png
-│       ├── 03-domain-promotion.png
-│       ├── 04-ou-structure.png
-│       ├── 05-gpo-config.png
-│       └── 06-verification.png
-└── scripts/
-    ├── 01-promote-domain-controller.ps1
-    ├── 02-create-ou-structure.ps1
-    ├── 03-create-groups.ps1
-    ├── 04-create-users.ps1
-    └── 05-helpdesk-tasks.ps1
-```
-
-> 🔧 **Adjust this tree to match your actual repo.** Add real screenshots to `docs/screenshots/` and update the paths above — recruiters and reviewers respond far better to a README with visual proof of work than text alone.
-
----
 
 ## 🚀 Build Steps
 
@@ -272,10 +248,8 @@ Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} -Propertie
 
 ## 📚 Key Takeaways
 
-> *Add your own reflection here — what surprised you, what you'd do differently at enterprise scale, and how this maps to a role you're targeting. This section is what turns a lab into a portfolio piece an interviewer actually remembers.*
-
 ---
 
 ## 📬 Contact
 
-**[Your Name]** — [LinkedIn](#) · [Portfolio](#) · [Email](#)
+**[Demarcus Miller]** — [LinkedIn](www.linkedin.com/in/demarcus-miller-96502b1a7) · [Portfolio](#) · [Email](millersdemarcus@gmail.com)

@@ -252,4 +252,4 @@ Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} -Propertie
 
 ## 📬 Contact
 
-**[Demarcus Miller]** — [LinkedIn](www.linkedin.com/in/demarcus-miller-96502b1a7) · [Portfolio](#) · [Email](millersdemarcus@gmail.com)
+**[Demarcus Miller]** — LinkedIn: www.linkedin.com/in/demarcus-miller-96502b1a7 · [Portfolio](#) · Email: Millersdemarcus@gmail.com

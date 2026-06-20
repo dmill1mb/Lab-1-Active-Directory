@@ -13,6 +13,9 @@
 | **Career relevance** | IT Support · Sysadmin · Cloud Engineer · Security Analyst |
 
 ---
+## LOOM VIDEO
+(https://www.loom.com/share/4e6639226e5f49b6a255badc7b4696b8)
+This is a video of me creating this project from scratch. I do have time stamps to skip the dead time.
 
 ## 📋 Overview
 

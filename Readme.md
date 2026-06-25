@@ -195,13 +195,31 @@ New-ADGroup -Name "Sales_Users"   -GroupScope Global -GroupCategory Security -Pa
 
 # Users + group assignment
 $password = ConvertTo-SecureString "Welcome@2026!" -AsPlainText -Force
-
+#  create all 4 users 
 New-ADUser -Name "alice.chen" -GivenName "Alice" -Surname "Chen" `
   -SamAccountName "alice.chen" -UserPrincipalName "alice.chen@lab.local" `
   -Path "OU=IT,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+ 
+New-ADUser -Name "bob.patel" -GivenName "Bob" -Surname "Patel" `
+  -SamAccountName "bob.patel" -UserPrincipalName "bob.patel@lab.local" `
+  -Path "OU=Finance,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+ 
+New-ADUser -Name "carol.jones" -GivenName "Carol" -Surname "Jones" `
+  -SamAccountName "carol.jones" -UserPrincipalName "carol.jones@lab.local" `
+  -Path "OU=HR,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+ 
+New-ADUser -Name "david.smith" -GivenName "David" -Surname "Smith" `
+  -SamAccountName "david.smith" -UserPrincipalName "david.smith@lab.local" `
+  -Path "OU=Sales,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+ 
+# add each user to their department group
+Add-ADGroupMember -Identity "IT_Admins"     -Members "alice.chen"
+Add-ADGroupMember -Identity "Finance_Users" -Members "bob.patel"
+Add-ADGroupMember -Identity "HR_Users"      -Members "carol.jones"
+Add-ADGroupMember -Identity "Sales_Users"   -Members "david.smith"
 
-Add-ADGroupMember -Identity "IT_Admins" -Members "alice.chen"
-# ...repeated for bob.patel (Finance), carol.jones (HR), david.smith (Sales)
+
+
 ```
 
 </details>
@@ -219,6 +237,7 @@ Created **IT Security Policy** GPO, linked to the `IT` OU:
 | Removable storage access | Deny all | Prevent data exfiltration via USB |
 
 Validated by joining a second VM to `lab.local`, moving its computer object into the `IT` OU, running `gpupdate /force`, and confirming policy applied for `alice.chen`.
+gpresult /r to confirm.
 
 </details>
 

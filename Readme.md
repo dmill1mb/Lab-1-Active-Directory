@@ -136,7 +136,7 @@ lab-01-active-directory/
     └── 05-helpdesk-tasks.ps1
 ```
 
-> 🔧 **Adjust this tree to match your actual repo.** Add real screenshots to `docs/screenshots/` and update the paths above — recruiters and reviewers respond far better to a README with visual proof of work than text alone.
+
 
 ---
 
@@ -144,6 +144,7 @@ lab-01-active-directory/
 
 <details>
 <summary><strong>Step 1 — Provision the VM</strong></summary>
+<img width="2313" height="392" alt="image" src="https://github.com/user-attachments/assets/f90c49c8-c56c-4696-85a0-41ce8306b7c2" />
 
 Created an Azure VM using Windows Server 2025 Datacenter (Gen2), `Standard_B2s` size, RDP (3389) inbound allowed. VM stopped between sessions to stay within free-tier compute hours.
 
@@ -151,6 +152,8 @@ Created an Azure VM using Windows Server 2025 Datacenter (Gen2), `Standard_B2s` 
 
 <details>
 <summary><strong>Step 2 — Install Active Directory Domain Services</strong></summary>
+<img width="2426" height="643" alt="Screenshot 2026-06-24 203352" src="https://github.com/user-attachments/assets/192ae44d-3241-4b58-a891-d7ce305a3a1f" />
+
 
 ```powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
@@ -161,6 +164,9 @@ Install-WindowsFeature -Name GPMC
 
 <details>
 <summary><strong>Step 3 — Promote to Domain Controller</strong></summary>
+<img width="937" height="649" alt="Screenshot 2026-06-24 210441" src="https://github.com/user-attachments/assets/a50c3f4b-085b-46c8-916c-85fa6ae5433d" />
+
+
 
 ```powershell
 Import-Module ADDSDeployment
@@ -294,8 +300,7 @@ Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} -Propertie
 
 ## 📚 Key Takeaways
 
-> *Add your own reflection here — what surprised you, what you'd do differently at enterprise scale, and how this maps to a role you're targeting. This section is what turns a lab into a portfolio piece an interviewer actually remembers.*
-
+> Sysadmin job descriptions list Active Directory as a requirement almost universally, and now I understand why. Every other system in a Windows environment depends on it — file servers, print servers, Microsoft 365, endpoint management through Intune, certificate services. AD is the foundation everything else is bolted to. If you can't build it, you can't troubleshoot it, and if you can't troubleshoot it, you're reactive instead of proactive when something breaks. I can now also speak to what an OU is and why the structure matters, why security groups exist instead of assigning permissions to individual users, and why a GPO not applying is a diagnostic problem rather than a configuration one.
 ---
 
 ## 📬 Contact

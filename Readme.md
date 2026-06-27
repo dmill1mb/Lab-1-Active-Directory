@@ -265,6 +265,7 @@ Disable-ADAccount -Identity "david.smith"
 $cutoff = (Get-Date).AddDays(-90)
 Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} -Properties LastLogonDate |
   Select-Object Name, LastLogonDate
+#Search-ADAccount -AccountDisabled | Select-Object Name, SamAccountName
 ```
 
 </details>

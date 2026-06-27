@@ -1,6 +1,8 @@
 
 @@ -0,0 +1,281 @@
 # Lab 01 — Active Directory Domain Services
+## Loom Video
+(https://www.loom.com/share/68d334573a1b417a82b3e7f30a5646c6)
 
 **Identity & Access Management on Windows Server 2025**
 
